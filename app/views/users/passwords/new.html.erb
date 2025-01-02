@@ -1,0 +1,20 @@
+<div class="users-passwords-container">
+
+  <h2>パスワードを忘れてしまった方へ</h2>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+
+    <div class="users-passwords-email">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="users-passwords-reset-button">
+      <%= f.submit "Send me reset password instructions" %>
+    </div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+
+</div>

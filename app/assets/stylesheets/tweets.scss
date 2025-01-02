@@ -1,0 +1,459 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+.back-to-index {
+    /* 横方向中央寄せ */
+    text-align: center;
+    margin-top: 40px; /* 上下のマージンを適宜調整 */
+}
+
+
+
+
+
+/*一覧ページ*/
+/* 背景画像 */
+.backgroundimage {
+    background-image: url("morning.jpg");
+    background-repeat: no-repeat; /* 繰り返しなし */
+    background-size: cover; /* 背景を全体に拡大 */
+    background-position: center top; /* 重要な部分を上部に配置 */
+    width: 100%;
+    height: 750px;
+    position: relative; /* 絶対配置の基準 */
+    z-index: -1;
+}
+
+/* オーバーレイ (必要に応じて色を追加) */
+.backgroundimage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* h1 の配置 */
+.content1 {
+    font-family: 'ShirofukuG', sans-serif;
+    position: absolute;
+    bottom: 9%; /* 背景画像の上部20%に配置 */
+    left: 7%; /* 左から10%の位置に配置 */
+    z-index: 2;
+    color: white;
+    font-size: 36px; /* h1のサイズ */
+    text-align: start;
+    line-height: 1.5; /* 行間を調整 */
+}
+
+.content2 {
+    position: relative; /* フレックスボックスを利用可能にする */
+    margin: 15px;
+    display: flex; /* フレックスボックスを適用 */
+    justify-content: center; /* 横方向中央揃え */
+    align-items: center; /* 縦方向中央揃え */
+    height: 100%; /* 親要素の高さを全体に設定 */
+    text-align: center; /* テキストを中央揃え */
+    padding: 20px; /* 余白を適度に設定 */
+    background-color: #168C8C;
+}
+
+.content2 h3 {
+    margin: 0; /* デフォルトの余白をリセット */
+    line-height: 1.6; /* 行間を調整 */
+    font-size: 20px; /* フォントサイズを適切に調整 */
+}
+
+h3 {
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content3 {
+    color: #333;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .backgroundimage {
+        height: 500px; /* 背景画像の高さを調整 */
+    }
+
+    .content1 {
+        top: 10%; /* 上部に寄せる */
+        left: 5%; /* 左に寄せる */
+        font-size: 24px; /* フォントサイズを小さくする */
+    }
+
+    .content2 {
+        top: 80%; /* 下部に寄せる */
+        font-size: 16px; /* フォントサイズを小さくする */
+        width: 90%; /* 幅を広げる */
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* 投稿一覧のコンテナ */
+.index-tweets-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    padding: 10px;
+    max-width: 1200px;
+    position: relative;
+}
+
+/* 投稿カード */
+.index-tweet-card {
+    background-color: #F2D888;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 450px; /* カードの幅 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.index-tweet-card-left hr {
+    border: none;
+    border-top: 1px solid #e1bf5b; /* 横線をカスタマイズ */
+    margin: 10px 0; /* 上下の余白を調整 */
+}
+
+
+/* カード内の情報 */
+.index-tweet-card-left {
+    margin-bottom: 10px;
+}
+
+.index-tweet-card-right img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* ボタンコンテナ */
+.index-sed-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.index-sed-container a {
+    
+    color: #007bff;
+    padding: 8px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.index-sed-container a:hover {
+    background-color: #bae5e5;
+}
+
+/* いいねボタン */
+.index-tweet-container .fa-heart {
+    color: #e63946;
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*新規投稿ページ*/
+.new-tweet-container {
+    margin: 10px auto;
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.new-tweet-card {
+    padding: 20px;
+    background-color: #F2D888; /* 柔らかいオレンジで目に優しい配色 */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.new-tweet-button input[type="submit"] {
+    background-color: #006d77; /* ダークグリーン系の色 */
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.new-tweet-button input[type="submit"]:hover {
+    background-color: #00504d; /* 濃い緑でホバー時に変化 */
+    transform: translateY(-2px); /* ホバーで浮いているように */
+}
+
+.field {
+    margin-bottom: 15px; /* フィールド間に余白 */
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333; /* ダークグレーの文字色 */
+}
+
+.field input,
+.field textarea {
+    width: 96%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: #80BFB9; /* フォーカス時に色を変更 */
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .new-tweet-container {
+        padding: 15px;
+    }
+
+    .field input,
+    .field textarea {
+        font-size: 16px; /* 小さい画面では文字を大きく */
+    }
+
+    .new-tweet-button input[type="submit"],
+    .new-back-to-index a {
+        width: 100%; /* ボタンを幅いっぱいに */
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+/* コーヒーアイコンのスタイル */
+.coffee-icon {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 250px;  /* 必要に応じてサイズ調整 */
+    height: auto;
+    z-index: 1000;  /* 他のコンテンツの上に表示 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*投稿編集ページ*/
+.edit-tweet-container {
+    margin: 0 auto;
+    width: 650px;
+    height: 200px;
+    position: relative;
+}
+
+.edit-tweet-card {
+    margin: 0 auto;
+    width: 100%; 
+    max-width: 600px;
+    position: absolute;
+    top: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #F2D888;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.edit-tweet-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+.edit-tweet-button input[type="submit"] {
+    background-color: #168C8C; /* 緑色の背景 */
+    color: white;
+    border: none;
+    padding: 12px 25px; /* ボタンの内側の余白 */
+    border-radius: 5px; /* 丸みを持たせる */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* ホバー時のアニメーション */
+}
+
+  /* ホバー時の背景色 */
+.edit-tweet-button input[type="submit"]:hover {
+    background-color: #0c6f6f; /* 少し暗くする */
+}
+
+
+
+
+
+
+
+
+
+
+/* 詳細ページ*/
+.show-container {
+    max-width: 800px;
+    margin: 0 auto; /* センターに配置 */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+}
+
+.show-tweet-container {
+    width: 600px;
+    margin: 0 auto;
+    display: flex; 
+    flex-wrap: wrap; /* レスポンシブ対応 */
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #F2D888;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.show-tweet-container-left {
+    flex: 1 1 45%; /* レスポンシブ対応 */
+    padding: 10px;
+    font-size: large;
+}
+
+.show-tweet-container-left p {
+    margin: 8px 0;
+    color: #333;
+}
+
+.show-tweet-container-left hr {
+    border: none;
+    border-top: 1px solid #e1bf5b; /* 横線をカスタマイズ */
+    margin: 10px 0; /* 上下の余白を調整 */
+}
+
+.show-tweet-container-right {
+    display: flex; /* フレックスボックスを有効にする */
+    align-items: center; /* 垂直方向（上下）の中央配置 */
+    justify-content: center; /* 水平方向（左右）の中央配置 */
+    gap: 10px; /* 画像とリンクの間にスペースを追加 */
+    flex: 1 1 45%; /* レスポンシブ対応 */
+    padding: 10px;
+    position: relative;
+    flex-direction: column;
+}
+
+.show-tweet-container-right img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.show-go-to-edit {
+    margin: 0; /* 余計な余白を削除（必要に応じて） */
+}
+
+.show-lc-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.show-like-container, 
+.show-comment-container {
+    flex: 1 1 48%;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.show-like-container h2,
+.show-comment-container p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.show-like-container li, 
+.show-comment-container div {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+form textarea {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

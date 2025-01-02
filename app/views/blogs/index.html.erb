@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+
+<%= month_calendar(events: @tweets, attribute: :date) do |date, tweets| %>
+  <div class="calendar-day">
+    <!-- 日付を表示 -->
+    <div class="calendar-day-number"><%= date.day %></div>
+      <% tweets.each do |tweet| %>
+        <div class="tweet-card">
+          <p><%= tweet.about %></p> <!-- ツイートの内容 -->
+        </div>
+      <% end %>
+    </div>  
+  </div>
+<% end %>
+
+

@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require simple_calendar
+ *= require_tree .
+ *= require_self
+ */
+
+
+
+ * {
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  }
+
+  header {
+    background-color: #F2C288;
+    height: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* 前面に配置するために必要 */
+    z-index: 10; /* 背景の上に表示 */
+  }
+
+  header a {
+    color: white; 
+    text-decoration: none; 
+    transition: all 0.3s ease; /* スムーズな変化を追加 */
+  }
+
+  header li:hover a {
+    color: #333; /* ホバー時の文字色を変更 */
+    background-color: #FFDD99; /* ホバー時の背景色を変更 */
+    padding: 5px 10px; /* 背景色が目立つように余白を追加 */
+    border-radius: 4px; /* 背景色に丸みを加える */
+  }
+
+  header li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease; /* 下線のアニメーション */
+    margin-top: 5px; /* 下線と文字の間隔 */
+  }
+  
+  header li:hover a::after {
+    width: 100%; /* ホバー時に下線をフル表示 */
+  }
+
+  
+
+  header h1 {
+    color: white;
+    margin-left: 20px;
+  }
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+
+  body {
+    background: linear-gradient(to bottom, #80BFB9, #8ebeb9); /* グラデーション */
+    font-family: Arial, sans-serif; /* 全体のフォント設定 */
+    
+}
+
+@font-face {
+  font-family: 'ShirofukuG';
+  src: url('/assets/CHI_Shirofuku-G2.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

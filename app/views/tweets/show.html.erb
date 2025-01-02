@@ -1,0 +1,61 @@
+<div class="show-container">
+
+  <div class="show-tweet-container">
+    <div class="show-tweet-container-left">
+      <p><%= @tweet.name %></p>
+      <p><%= @tweet.date %></p>
+      <hr>
+      <p><%= @tweet.about %></p>
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(@tweet) %>
+          <%= link_to tweet_like_path(@tweet), method: :delete do %>
+            <i class="fas fa-heart"></i> <%= @tweet.likes.count %>
+          <% end %>
+        <% else %>
+          <%= link_to tweet_likes_path(@tweet), method: :post do %>
+            <i class="far fa-heart"></i> <%= @tweet.likes.count %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <i class="far fa-heart"></i> <%= @tweet.likes.count %>
+      <% end %>
+    </div>
+
+    <div class="show-tweet-container-right">
+      <%= image_tag @tweet.image_url, size: "200x160" if @tweet.image? %>
+      <div class="show-go-to-edit">
+        <%= link_to "編集する", edit_tweet_path(@tweet.id), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="show-lc-container">
+    <div class="show-like-container">
+      <h2>いいねしたユーザー</h2>
+      <% @tweet.liked_users.each do |user| %>
+        <li><%= user.email %></li>
+      <% end %>
+    </div>
+
+    <div class="show-comment-container">
+      <p>コメント一覧</p>
+      <% @comments.each do |c| %>
+        <div>
+          <%= c.user.email unless c.user.blank? %><br>
+          <%= c.content %>
+        </div>
+        <br>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+          <%= f.text_area :content %>
+          <%= button_tag type: "submit" do %>
+            <i class="far fa-comments"></i> コメントする
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

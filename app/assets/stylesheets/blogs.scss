@@ -1,0 +1,133 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* カレンダー全体の背景 */
+.simple-calendar {
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* ヘッダー */
+.calendar-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #437873; /* ヘッダー色 */
+    color: #fff; /* 濃いブラウン文字 */
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Previous と Next のリンクスタイル */
+.calendar-heading a {
+    color: #f0f0f0; /* リンクの文字色を青に変更 */
+    text-decoration: none; /* 下線を消す */
+    font-weight: lighter;
+    transition: color 0.3s ease; /* ホバー時の滑らかな色変化 */
+}
+
+/* ホバー時の色 */
+.calendar-heading a:hover {
+    color: #3a4af9; /* ホバー時に赤色に変更 */
+}
+
+
+.calendar-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* テーブルスタイル */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1px;
+    background-color: #f0f0f0; /* 隙間の色 */
+}
+
+.table th,
+.table td {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.table th {
+    background-color: #80BFB9; /* 平日の背景 */
+    color: #ffffff; /* 白文字 */
+    font-weight: bold;
+    padding: 15px;
+}
+
+/* 今日のスタイル */
+.table td.today {
+    background-color: #FFD8A8; /* 今日の背景 */
+    color: #4A3B25;
+    font-weight: bold;
+}
+
+/* 土曜日と日曜日 */
+.table td.saturday {
+    background-color: #E3F2FD;
+    color: #0077B6;
+}
+
+.table td.sunday {
+    background-color: #FDECEA;
+    color: #D00000;
+}
+
+/* カード */
+.tweet-card {
+    background-color: #FAFAFA;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.tweet-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tweet-card p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .simple-calendar {
+        max-width: 100%;
+        margin: 15px;
+    }
+
+    .calendar-title {
+        font-size: 20px;
+    }
+
+    .calendar-heading {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .table th,
+    .table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

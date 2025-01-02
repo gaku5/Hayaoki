@@ -1,0 +1,63 @@
+<div class="backgroundimage">
+    <div class="content1">
+        <h1>朝、<br>動けば1日が変わる</h1>
+    </div>
+</div>
+
+<div class="content2">
+  <h3>
+    早起きしてやったこと、ちょっとしたコツ、悩みだって投稿してみよう<br>
+    他のユーザーの応援や共感が、きっとあなたの次の朝を後押ししてくれるはず<br>
+    <br>
+    乱れた生活リズムを整えたい？自分の「朝活」をもっと楽しみたい？<br>
+    さあ、一歩踏み出して、新しい1日を始めよう!<br>
+  </h3>
+</div>
+
+<div class="content3">
+  <h2>注目の投稿</h2>
+</div>
+
+<div class="index-tweets-container">
+  <% @rank_tweets.each do |t| %>
+    <div class="index-tweet-card">
+
+      <!-- カードの内容 -->
+      <div class="index-tweet-card-left">
+        <p><strong><%= t.name %></strong></p>
+        <p><%= t.date %></p>
+        <hr> <!-- 横線を追加 -->
+        <p><%= t.about %></p>
+      </div>
+
+      <div class="index-tweet-card-right">
+        <% if t.image? %>
+          <%= image_tag t.image_url %>
+        <% end %>
+      </div>
+
+      <!-- ボタンセクション -->
+      <div class="index-sed-container">
+        <%= link_to "詳細へ", tweet_path(t.id) %>
+        <%= link_to "編集する", edit_tweet_path(t.id) %>
+        <%= link_to "削除する", tweet_path(t.id), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+      </div>
+
+      <!-- いいねボタン -->
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+          <%= link_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
+            <i class="fas fa-heart"></i><%= t.likes.count %>
+          <% end %>
+        <% else %>
+          <%= link_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :post do %>
+            <i class="far fa-heart"></i><%= t.likes.count %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <i class="far fa-heart"></i><%= t.likes.count %>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

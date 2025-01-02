@@ -1,0 +1,184 @@
+/*ログイン画面*/
+.users-log-in-container {
+    max-width: 400px; /* フォームの幅 */
+    margin: 35px auto; /* 中央寄せ */
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景色 */
+    border-radius: 8px; /* 角を丸める */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウで立体感を */
+    text-align: center;
+}
+
+.users-log-in-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.users-log-in-container label {
+    display: block; /* ラベルを独立した行に */
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #555;
+}
+
+.users-log-in-container input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.users-log-in-button input[type="submit"] {
+    background-color: #168C8C; /* ボタンの背景色 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.users-log-in-button input[type="submit"]:hover {
+    background-color: #145A5A; /* ホバー時の色 */
+}
+
+.users-remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}  
+
+.users-remember-me input[type="checkbox"] {
+    width: 20px;
+    margin-top: 20px;
+    accent-color: #168C8C; /* チェックの色を変更 */
+    transform: scale(1.2); /* サイズを少し大きく */
+}
+
+.users-remember-me label {
+    display: inline;
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*サインアップ画面*/
+.users-sign-up-container {
+    max-width: 400px; /* フォームの幅 */
+    margin: 35px auto; /* 中央寄せ */
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景色 */
+    border-radius: 8px; /* 角を丸める */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウで立体感を */
+    text-align: center;
+}
+
+.users-sign-up-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.users-sign-up-container label {
+    display: block; /* ラベルを独立した行に */
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #555;
+}
+
+.users-sign-up-container input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.users-sign-up-button input[type="submit"] {
+    background-color: #168C8C; /* ボタンの背景色 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.users-sign-up-button input[type="submit"]:hover {
+    background-color: #145A5A; /* ホバー時の色 */
+}
+
+
+
+
+
+
+
+
+
+/*パスワードを忘れた方へ画面*/
+.users-passwords-container {
+    max-width: 400px; /* フォームの幅 */
+    margin: 35px auto; /* 中央寄せ */
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景色 */
+    border-radius: 8px; /* 角を丸める */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* シャドウで立体感を */
+    text-align: center;
+}
+
+.users-passwords-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.users-passwords-container label {
+    display: block; /* ラベルを独立した行に */
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #555;
+}
+
+.users-passwords-container input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.users-passwords-reset-button input[type="submit"] {
+    background-color: #168C8C; /* ボタンの背景色 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.users-passwords-reset-button input[type="submit"]:hover {
+    background-color: #145A5A; /* ホバー時の色 */
+}
+
+
+
+
+
