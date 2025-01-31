@@ -19,5 +19,6 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
     "babel-loader": "^8.2.2",
     "webpack-dev-server": "3"
-  }
+  },
+  "scripts": { "start": "NODE_OPTIONS=--openssl-legacy-provider node server.js", "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode production" }
 }
